@@ -40,6 +40,8 @@ test("delete method", async({request})=>{
     expect(deletindData.status()).toBe(201)
     expect(deletindData.statusText()).toBe("Created")
     
-
+    const getBooking = await request.get("https://restful-booker.herokuapp.com/booking/"+bookingID)
+    expect(getBooking.status()).toBe(404)
+    expect(getBooking.statusText()).toBe("Not Found")
     
 })
