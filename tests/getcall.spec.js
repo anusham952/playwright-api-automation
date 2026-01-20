@@ -20,7 +20,7 @@ test("get API", async({request})=>{
 })
 
 
-test.only("get the data", async({request})=>{
+test("get the data", async({request})=>{
     const getData= await request.get("https://restful-booker.herokuapp.com/booking/1")
     console.log(await getData.json())
     console.log("the status code is:"+ await getData.status())
